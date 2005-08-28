@@ -1,5 +1,7 @@
-Summary:	xfs application
-Summary(pl):	Aplikacja xfs
+Summary:	Font server for X Window System
+Summary(pl):	Serwer fontСw dla X Window System
+Summary(ru):	Фонтсервер для X Window System
+Summary(uk):	Фонтсервер для X Window System
 Name:		xorg-app-xfs
 Version:	0.99.0
 Release:	0.02
@@ -16,13 +18,33 @@ BuildRequires:	pkgconfig >= 0.19
 BuildRequires:	xorg-lib-libFS-devel
 BuildRequires:	xorg-lib-libXfont-devel
 BuildRequires:	xorg-util-util-macros
+Obsoletes:	X11-xfs
+Obsoletes:	XFree86-xfs
+Obsoletes:	xfs
+Obsoletes:	xfsft
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-xfs application.
+This is a font server for X Window System. You can serve fonts to
+other X servers remotely with this package, and the remote system will
+be able to use all fonts installed on the font server, even if they
+are not installed on the remote computer.
 
 %description -l pl
-Aplikacja xfs.
+Pakiet zawiera serwer fontСw dla X Window System. Mo©e udostЙpniaФ
+fonty dla X serwerСw lokalnych lub zdalnych.
+
+%description -l ru
+xfs содержит сервер шрифтов для X Window System. Xfs также может
+предоставлять шрифты удаленным X-серверам. Удаленная система будет
+способна использовать все шрифты, установленные на сервере шрифтов,
+даже если они не установлены на удаленном компьютере.
+
+%description -l uk
+xfs м╕стить сервер шрифт╕в для X Window System. Xfs також може
+надавати шрифти в╕ддаленим X-серверам. В╕ддалена система зможе
+використовувати ус╕ шрифти, як╕ встановлен╕ на сервер╕ шрифт╕в, нав╕ть
+якщо вони не встановлен╕ на в╕ддаленому комп'ютер╕.
 
 %prep
 %setup -q -n xfs-%{version}
