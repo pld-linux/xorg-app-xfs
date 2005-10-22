@@ -3,21 +3,20 @@ Summary(pl):	Serwer fontСw dla X Window System
 Summary(ru):	Фонтсервер для X Window System
 Summary(uk):	Фонтсервер для X Window System
 Name:		xorg-app-xfs
-Version:	0.99.0
-Release:	0.02
+Version:	0.99.1
+Release:	0.1
 License:	MIT
 Group:		X11/Applications
-Source0:	http://xorg.freedesktop.org/X11R7.0-RC0/app/xfs-%{version}.tar.bz2
-# Source0-md5:	fc9ed8773c67bdd54a80c51e567e0076
-Patch0:		xfs-man.patch
-Patch1:		xfs-freebsd.patch
+Source0:	http://xorg.freedesktop.org/releases/X11R7.0-RC1/app/xfs-%{version}.tar.bz2
+# Source0-md5:	3813c88fbd5ba67a412b9447e1e7508b
+Patch0:		xorg-xfs-freebsd.patch
 URL:		http://xorg.freedesktop.org/
-BuildRequires:	autoconf
+BuildRequires:	autoconf >= 2.57
 BuildRequires:	automake
 BuildRequires:	pkgconfig >= 0.19
 BuildRequires:	xorg-lib-libFS-devel
 BuildRequires:	xorg-lib-libXfont-devel
-BuildRequires:	xorg-util-util-macros
+BuildRequires:	xorg-util-util-macros >= 0.99.1
 Obsoletes:	X11-xfs
 Obsoletes:	XFree86-xfs
 Obsoletes:	xfs
@@ -49,7 +48,6 @@ xfs м╕стить сервер шрифт╕в для X Window System. Xfs також може
 %prep
 %setup -q -n xfs-%{version}
 %patch0 -p1
-%patch1 -p1
 
 %build
 %{__aclocal}
@@ -64,13 +62,15 @@ xfs м╕стить сервер шрифт╕в для X Window System. Xfs також може
 rm -rf $RPM_BUILD_ROOT
 
 %{__make} install \
-	DESTDIR=$RPM_BUILD_ROOT
+	DESTDIR=$RPM_BUILD_ROOT \
+	appmandir=%{_mandir}/man1
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
+%doc ChangeLog README
 %attr(755,root,root) %{_bindir}/*
 %{_libdir}/X11/fs/config
-%{_mandir}/man1/*.1*
+%{_mandir}/man1/*.1x*
