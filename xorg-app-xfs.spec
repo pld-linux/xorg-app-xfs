@@ -3,12 +3,12 @@ Summary(pl):	Serwer fontСw dla X Window System
 Summary(ru):	Фонтсервер для X Window System
 Summary(uk):	Фонтсервер для X Window System
 Name:		xorg-app-xfs
-Version:	0.99.1
+Version:	0.99.2
 Release:	0.1
 License:	MIT
 Group:		X11/Applications
-Source0:	http://xorg.freedesktop.org/releases/X11R7.0-RC1/app/xfs-%{version}.tar.bz2
-# Source0-md5:	3813c88fbd5ba67a412b9447e1e7508b
+Source0:	http://xorg.freedesktop.org/releases/X11R7.0-RC2/app/xfs-%{version}.tar.bz2
+# Source0-md5:	c3a75285b1fb6ad4cd1d80ab6f7270ea
 Patch0:		xorg-xfs-freebsd.patch
 URL:		http://xorg.freedesktop.org/
 BuildRequires:	autoconf >= 2.57
