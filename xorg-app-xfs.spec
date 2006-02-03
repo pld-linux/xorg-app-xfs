@@ -9,6 +9,9 @@ License:	MIT
 Group:		X11/Applications
 Source0:	http://xorg.freedesktop.org/releases/X11R7.0/src/app/xfs-%{version}.tar.bz2
 # Source0-md5:	8ed805113037e86ad01068d0b464a062
+Source1:	xfs.config
+Source2:	xfs.init
+Source3:	xfs.sysconfig
 Patch0:		xorg-xfs-freebsd.patch
 URL:		http://xorg.freedesktop.org/
 BuildRequires:	autoconf >= 2.57
@@ -56,13 +59,19 @@ xfs м╕стить сервер шрифт╕в для X Window System. Xfs також може
 %{__automake}
 %configure
 
-%{__make}
+%{__make} \
+	configdir=%{_sysconfdir}/X11/fs
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
 %{__make} install \
-	DESTDIR=$RPM_BUILD_ROOT
+	DESTDIR=$RPM_BUILD_ROOT \
+	configdir=%{_sysconfdir}/X11/fs
+
+install %{SOURCE1} $RPM_BUILD_ROOT%{_sysconfdir}/X11/fs/config
+install -D %{SOURCE2} $RPM_BUILD_ROOT/etc/rc.d/init.d/xfs
+install -D %{SOURCE3} $RPM_BUILD_ROOT/etc/sysconfig/xfs
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -71,5 +80,8 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc COPYING ChangeLog README
 %attr(755,root,root) %{_bindir}/*
-%{_libdir}/X11/fs/config
+%dir %{_sysconfdir}/X11/fs
+%config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/X11/fs/config
+%attr(754,root,root) /etc/rc.d/init.d/xfs
+%attr(640,root,root) %config(noreplace) %verify(not md5 mtime size) /etc/sysconfig/xfs
 %{_mandir}/man1/*.1x*
