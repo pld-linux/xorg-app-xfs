@@ -4,7 +4,7 @@ Summary(ru):	Фонтсервер для X Window System
 Summary(uk):	Фонтсервер для X Window System
 Name:		xorg-app-xfs
 Version:	1.0.4
-Release:	1
+Release:	2
 License:	MIT
 Group:		X11/Applications
 Source0:	http://xorg.freedesktop.org/releases/individual/app/xfs-%{version}.tar.bz2
@@ -31,9 +31,9 @@ Requires(pre):	/usr/sbin/useradd
 Requires:	rc-scripts
 Provides:	group(xfs)
 Provides:	user(xfs)
-Obsoletes:	X11-xfs
-Obsoletes:	XFree86-xfs
-Obsoletes:	xfs
+Obsoletes:	X11-xfs < 1:7.0.0
+Obsoletes:	XFree86-xfs < 1:7.0.0
+Obsoletes:	xfs < 1:7.0.0
 Obsoletes:	xfsft
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
