@@ -1,7 +1,7 @@
 Summary:	Font server for X Window System
-Summary(pl):	Serwer fontСw dla X Window System
-Summary(ru):	Фонтсервер для X Window System
-Summary(uk):	Фонтсервер для X Window System
+Summary(pl.UTF-8):   Serwer fontцЁw dla X Window System
+Summary(ru.UTF-8):   п╓п╬п╫я┌я│п╣я─п╡п╣я─ п╢п╩я▐ X Window System
+Summary(uk.UTF-8):   п╓п╬п╫я┌я│п╣я─п╡п╣я─ п╢п╩я▐ X Window System
 Name:		xorg-app-xfs
 Version:	1.0.4
 Release:	2
@@ -43,21 +43,21 @@ other X servers remotely with this package, and the remote system will
 be able to use all fonts installed on the font server, even if they
 are not installed on the remote computer.
 
-%description -l pl
-Pakiet zawiera serwer fontСw dla X Window System. Mo©e udostЙpniaФ
-fonty dla X serwerСw lokalnych lub zdalnych.
+%description -l pl.UTF-8
+Pakiet zawiera serwer fontцЁw dla X Window System. Moе╪e udostд≥pniaд┤
+fonty dla X serwerцЁw lokalnych lub zdalnych.
 
-%description -l ru
-xfs содержит сервер шрифтов для X Window System. Xfs также может
-предоставлять шрифты удаленным X-серверам. Удаленная система будет
-способна использовать все шрифты, установленные на сервере шрифтов,
-даже если они не установлены на удаленном компьютере.
+%description -l ru.UTF-8
+xfs я│п╬п╢п╣я─п╤п╦я┌ я│п╣я─п╡п╣я─ я┬я─п╦я└я┌п╬п╡ п╢п╩я▐ X Window System. Xfs я┌п╟п╨п╤п╣ п╪п╬п╤п╣я┌
+п©я─п╣п╢п╬я│я┌п╟п╡п╩я▐я┌я▄ я┬я─п╦я└я┌я▀ я┐п╢п╟п╩п╣п╫п╫я▀п╪ X-я│п╣я─п╡п╣я─п╟п╪. пёп╢п╟п╩п╣п╫п╫п╟я▐ я│п╦я│я┌п╣п╪п╟ п╠я┐п╢п╣я┌
+я│п©п╬я│п╬п╠п╫п╟ п╦я│п©п╬п╩я▄п╥п╬п╡п╟я┌я▄ п╡я│п╣ я┬я─п╦я└я┌я▀, я┐я│я┌п╟п╫п╬п╡п╩п╣п╫п╫я▀п╣ п╫п╟ я│п╣я─п╡п╣я─п╣ я┬я─п╦я└я┌п╬п╡,
+п╢п╟п╤п╣ п╣я│п╩п╦ п╬п╫п╦ п╫п╣ я┐я│я┌п╟п╫п╬п╡п╩п╣п╫я▀ п╫п╟ я┐п╢п╟п╩п╣п╫п╫п╬п╪ п╨п╬п╪п©я▄я▌я┌п╣я─п╣.
 
-%description -l uk
-xfs м╕стить сервер шрифт╕в для X Window System. Xfs також може
-надавати шрифти в╕ддаленим X-серверам. В╕ддалена система зможе
-використовувати ус╕ шрифти, як╕ встановлен╕ на сервер╕ шрифт╕в, нав╕ть
-якщо вони не встановлен╕ на в╕ддаленому комп'ютер╕.
+%description -l uk.UTF-8
+xfs п╪я√я│я┌п╦я┌я▄ я│п╣я─п╡п╣я─ я┬я─п╦я└я┌я√п╡ п╢п╩я▐ X Window System. Xfs я┌п╟п╨п╬п╤ п╪п╬п╤п╣
+п╫п╟п╢п╟п╡п╟я┌п╦ я┬я─п╦я└я┌п╦ п╡я√п╢п╢п╟п╩п╣п╫п╦п╪ X-я│п╣я─п╡п╣я─п╟п╪. п▓я√п╢п╢п╟п╩п╣п╫п╟ я│п╦я│я┌п╣п╪п╟ п╥п╪п╬п╤п╣
+п╡п╦п╨п╬я─п╦я│я┌п╬п╡я┐п╡п╟я┌п╦ я┐я│я√ я┬я─п╦я└я┌п╦, я▐п╨я√ п╡я│я┌п╟п╫п╬п╡п╩п╣п╫я√ п╫п╟ я│п╣я─п╡п╣я─я√ я┬я─п╦я└я┌я√п╡, п╫п╟п╡я√я┌я▄
+я▐п╨я┴п╬ п╡п╬п╫п╦ п╫п╣ п╡я│я┌п╟п╫п╬п╡п╩п╣п╫я√ п╫п╟ п╡я√п╢п╢п╟п╩п╣п╫п╬п╪я┐ п╨п╬п╪п©'я▌я┌п╣я─я√.
 
 %prep
 %setup -q -n xfs-%{version}
