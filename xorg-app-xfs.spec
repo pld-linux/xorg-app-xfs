@@ -1,7 +1,7 @@
 Summary:	Font server for X Window System
-Summary(pl.UTF-8):   Serwer fontów dla X Window System
-Summary(ru.UTF-8):   Фонтсервер для X Window System
-Summary(uk.UTF-8):   Фонтсервер для X Window System
+Summary(pl.UTF-8):	Serwer fontów dla X Window System
+Summary(ru.UTF-8):	Фонтсервер для X Window System
+Summary(uk.UTF-8):	Фонтсервер для X Window System
 Name:		xorg-app-xfs
 Version:	1.0.4
 Release:	2
