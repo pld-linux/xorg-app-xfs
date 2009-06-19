@@ -3,16 +3,15 @@ Summary(pl.UTF-8):	Serwer fontów dla X Window System
 Summary(ru.UTF-8):	Фонтсервер для X Window System
 Summary(uk.UTF-8):	Фонтсервер для X Window System
 Name:		xorg-app-xfs
-Version:	1.0.8
+Version:	1.1.0
 Release:	1
 License:	MIT
 Group:		X11/Applications
 Source0:	http://xorg.freedesktop.org/releases/individual/app/xfs-%{version}.tar.bz2
-# Source0-md5:	f10717e45535b64eb45226aac571dac2
+# Source0-md5:	5cfc06a320f74f07a0aa73da62307e9a
 Source1:	xfs.config
 Source2:	xfs.init
 Source3:	xfs.sysconfig
-Patch0:		xorg-xfs-freebsd.patch
 URL:		http://xorg.freedesktop.org/
 BuildRequires:	autoconf >= 2.57
 BuildRequires:	automake
@@ -61,7 +60,6 @@ xfs містить сервер шрифтів для X Window System. Xfs та�
 
 %prep
 %setup -q -n xfs-%{version}
-%patch0 -p1
 
 %build
 %{__aclocal}
