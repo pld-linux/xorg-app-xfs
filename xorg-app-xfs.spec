@@ -66,17 +66,17 @@ xfs містить сервер шрифтів для X Window System. Xfs та�
 %{__autoconf}
 %{__autoheader}
 %{__automake}
-%configure
+%configure \
+	--disable-devel-docs \
+	--with-default-config-file=%{_sysconfdir}/X11/fs/config
 
-%{__make} \
-	configdir=%{_sysconfdir}/X11/fs
+%{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
 %{__make} install \
-	DESTDIR=$RPM_BUILD_ROOT \
-	configdir=%{_sysconfdir}/X11/fs
+	DESTDIR=$RPM_BUILD_ROOT
 
 install %{SOURCE1} $RPM_BUILD_ROOT%{_sysconfdir}/X11/fs/config
 install -D %{SOURCE2} $RPM_BUILD_ROOT/etc/rc.d/init.d/xfs
