@@ -13,13 +13,14 @@ Source1:	xfs.config
 Source2:	xfs.init
 Source3:	xfs.sysconfig
 URL:		http://xorg.freedesktop.org/
-BuildRequires:	autoconf >= 2.57
+BuildRequires:	autoconf >= 2.60
 BuildRequires:	automake
 BuildRequires:	pkgconfig >= 1:0.19
 BuildRequires:	rpmbuild(macros) >= 1.268
 BuildRequires:	xorg-lib-libFS-devel
 BuildRequires:	xorg-lib-libXfont-devel
-BuildRequires:	xorg-util-util-macros >= 1.1
+BuildRequires:	xorg-lib-xtrans-devel
+BuildRequires:	xorg-util-util-macros >= 1.2
 Requires(post,preun):	/sbin/chkconfig
 Requires(postun):	/usr/sbin/groupdel
 Requires(postun):	/usr/sbin/userdel
