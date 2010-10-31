@@ -3,12 +3,12 @@ Summary(pl.UTF-8):	Serwer fontów dla X Window System
 Summary(ru.UTF-8):	Фонтсервер для X Window System
 Summary(uk.UTF-8):	Фонтсервер для X Window System
 Name:		xorg-app-xfs
-Version:	1.1.0
+Version:	1.1.1
 Release:	1
 License:	MIT
 Group:		X11/Applications
 Source0:	http://xorg.freedesktop.org/releases/individual/app/xfs-%{version}.tar.bz2
-# Source0-md5:	5cfc06a320f74f07a0aa73da62307e9a
+# Source0-md5:	e02c6cae689c082b8c98a421df8f8670
 Source1:	xfs.config
 Source2:	xfs.init
 Source3:	xfs.sysconfig
@@ -17,10 +17,12 @@ BuildRequires:	autoconf >= 2.60
 BuildRequires:	automake
 BuildRequires:	pkgconfig >= 1:0.19
 BuildRequires:	rpmbuild(macros) >= 1.268
+BuildRequires:	xmlto >= 0.0.20
 BuildRequires:	xorg-lib-libFS-devel
 BuildRequires:	xorg-lib-libXfont-devel
 BuildRequires:	xorg-lib-xtrans-devel
-BuildRequires:	xorg-util-util-macros >= 1.2
+BuildRequires:	xorg-sgml-doctools >= 1.5
+BuildRequires:	xorg-util-util-macros >= 1.10
 Requires(post,preun):	/sbin/chkconfig
 Requires(postun):	/usr/sbin/groupdel
 Requires(postun):	/usr/sbin/userdel
@@ -63,12 +65,12 @@ xfs містить сервер шрифтів для X Window System. Xfs та�
 %setup -q -n xfs-%{version}
 
 %build
-%{__aclocal}
+%{__aclocal} -I m4
 %{__autoconf}
 %{__autoheader}
 %{__automake}
 %configure \
-	--disable-devel-docs \
+	--enable-devel-docs \
 	--with-default-config-file=%{_sysconfdir}/X11/fs/config
 
 %{__make}
@@ -118,7 +120,7 @@ fi
 
 %files
 %defattr(644,root,root,755)
-%doc COPYING ChangeLog README
+%doc COPYING ChangeLog README doc/*.{html,css}
 %attr(755,root,root) %{_bindir}/xfs
 %dir %{_sysconfdir}/X11/fs
 %config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/X11/fs/config
