@@ -3,24 +3,23 @@ Summary(pl.UTF-8):	Serwer fontów dla X Window System
 Summary(ru.UTF-8):	Фонтсервер для X Window System
 Summary(uk.UTF-8):	Фонтсервер для X Window System
 Name:		xorg-app-xfs
-Version:	1.1.4
-Release:	2
+Version:	1.2.0
+Release:	1
 License:	MIT
 Group:		X11/Applications
-Source0:	http://xorg.freedesktop.org/releases/individual/app/xfs-%{version}.tar.bz2
-# Source0-md5:	12adb259ee5e3df9633783e21b7a7a82
+Source0:	https://xorg.freedesktop.org/releases/individual/app/xfs-%{version}.tar.bz2
+# Source0-md5:	b4d2e644bfb35cae8858d2411501b07e
 Source1:	xfs.config
 Source2:	xfs.init
 Source3:	xfs.sysconfig
-URL:		http://xorg.freedesktop.org/
+URL:		https://xorg.freedesktop.org/
 BuildRequires:	autoconf >= 2.60
 BuildRequires:	automake
 BuildRequires:	pkgconfig >= 1:0.19
 BuildRequires:	rpmbuild(macros) >= 1.268
 BuildRequires:	xmlto >= 0.0.20
 BuildRequires:	xorg-font-font-util >= 1.1
-BuildRequires:	xorg-lib-libFS-devel
-BuildRequires:	xorg-lib-libXfont-devel >= 1.4.5
+BuildRequires:	xorg-lib-libXfont2-devel >= 2.0.1
 BuildRequires:	xorg-lib-xtrans-devel
 BuildRequires:	xorg-proto-xproto-devel >= 7.0.17
 BuildRequires:	xorg-sgml-doctools >= 1.5
@@ -33,7 +32,7 @@ Requires(pre):	/usr/bin/getgid
 Requires(pre):	/usr/sbin/groupadd
 Requires(pre):	/usr/sbin/useradd
 Requires:	rc-scripts
-Requires:	xorg-lib-libXfont >= 1.4.5
+Requires:	xorg-lib-libXfont2 >= 2.0.1
 Provides:	group(xfs)
 Provides:	user(xfs)
 Obsoletes:	X11-xfs < 1:7.0.0
