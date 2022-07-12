@@ -3,12 +3,12 @@ Summary(pl.UTF-8):	Serwer fontów dla X Window System
 Summary(ru.UTF-8):	Фонтсервер для X Window System
 Summary(uk.UTF-8):	Фонтсервер для X Window System
 Name:		xorg-app-xfs
-Version:	1.2.0
+Version:	1.2.1
 Release:	1
 License:	MIT
 Group:		X11/Applications
-Source0:	https://xorg.freedesktop.org/releases/individual/app/xfs-%{version}.tar.bz2
-# Source0-md5:	b4d2e644bfb35cae8858d2411501b07e
+Source0:	https://xorg.freedesktop.org/releases/individual/app/xfs-%{version}.tar.xz
+# Source0-md5:	8397e1af029f08f9a30e142b2938540a
 Source1:	xfs.config
 Source2:	xfs.init
 Source3:	xfs.sysconfig
@@ -17,6 +17,7 @@ BuildRequires:	autoconf >= 2.60
 BuildRequires:	automake
 BuildRequires:	pkgconfig >= 1:0.19
 BuildRequires:	rpmbuild(macros) >= 1.268
+BuildRequires:	tar >= 1:1.22
 BuildRequires:	xmlto >= 0.0.20
 BuildRequires:	xorg-font-font-util >= 1.1
 BuildRequires:	xorg-lib-libXfont2-devel >= 2.0.1
@@ -24,6 +25,7 @@ BuildRequires:	xorg-lib-xtrans-devel
 BuildRequires:	xorg-proto-xproto-devel >= 7.0.17
 BuildRequires:	xorg-sgml-doctools >= 1.5
 BuildRequires:	xorg-util-util-macros >= 1.10
+BuildRequires:	xz
 Requires(post,preun):	/sbin/chkconfig
 Requires(postun):	/usr/sbin/groupdel
 Requires(postun):	/usr/sbin/userdel
@@ -38,7 +40,7 @@ Provides:	user(xfs)
 Obsoletes:	X11-xfs < 1:7.0.0
 Obsoletes:	XFree86-xfs < 1:7.0.0
 Obsoletes:	xfs < 1:7.0.0
-Obsoletes:	xfsft
+Obsoletes:	xfsft < 1.2
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -122,7 +124,7 @@ fi
 
 %files
 %defattr(644,root,root,755)
-%doc COPYING ChangeLog README doc/xfs-design.html
+%doc COPYING ChangeLog README.md doc/xfs-design.html
 %attr(755,root,root) %{_bindir}/xfs
 %dir %{_sysconfdir}/X11/fs
 %config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/X11/fs/config
